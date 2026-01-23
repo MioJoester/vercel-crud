@@ -1,0 +1,75 @@
+ User / Admin
+     ↓
+ Opens Website
+     ↓
+ Responsive Header (JS)
+     ↓
+ Home Page (Hero Section)
+     ↓
+ Scroll-triggered Sections (GSAP)
+     ↓
+ Feature Interaction
+     ↓
+ Call-To-Action / Forms
+     ↓
+ FAQ / Footer
+
+
+ User
+ ↓
+Visits Website
+ ↓
+Views Hero Section
+ ↓
+Scrolls Page
+ ↓
+GSAP Reveals Content
+ ↓
+Explores:
+  - Features
+  - Benefits
+  - Pricing
+  - Articles
+ ↓
+Clicks CTA (Get Started / Contact)
+ ↓
+(Backend Integration Ready)
+
+
+
+Admin
+ ↓
+Admin Login (PHP)
+ ↓
+Admin Dashboard
+ ↓
+View User Data
+ ↓
+Add / Update / Delete Records
+ ↓
+Manage Content / Features
+
+
+
+User Action
+ ↓
+Click / Scroll / Resize
+ ↓
+JavaScript Detects Event
+ ↓
+State Check (Screen Size / Header State)
+ ↓
+GSAP / DOM Update
+ ↓
+Smooth Visual Response
+
+
+>Screen Width Check
+ ↓
+> 1024px → Desktop Layout
+ ↓
+≤ 1024px → Mobile Layout
+ ↓
+Collapsible Header Enabled
+ ↓
+Click Outside → Auto Close
