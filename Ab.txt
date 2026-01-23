@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Grubify</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Ubuntu", sans-serif;
+            background-color: #000;
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 0 5%;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            height: 50px;
+            width: 50px;
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        nav a {
+            color: #b1b1b1;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #fff;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 2rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: #fff;
+        }
+
+        main {
+            margin-top: 60px;
+            padding: 4rem 5%;
+        }
+
+        .hero-section {
+            text-align: center;
+            padding: 4rem 0;
+        }
+
+        .hero-section h1 {
+            font-size: 3.5rem;
+            font-weight: 600;
+            background: linear-gradient(90deg, rgba(215,215,215,1) 18%, rgba(136,136,136,1) 71%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-section p {
+            font-size: 1.2rem;
+            color: #d1d5db;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .about-content {
+            max-width: 1200px;
+            margin: 4rem auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #7e22ce;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #d1d5db;
+            margin-bottom: 1rem;
+        }
+
+        .mission-vision {
+            max-width: 1200px;
+            margin: 4rem auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .card {
+            background: #080808;
+            border: 1px solid #1F2123;
+            border-radius: 10px;
+            padding: 2rem;
+        }
+
+        .card h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #7e22ce;
+        }
+
+        .card p {
+            color: #d1d5db;
+            line-height: 1.8;
+        }
+
+        .team-section {
+            max-width: 1200px;
+            margin: 4rem auto;
+            text-align: center;
+        }
+
+        .team-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #e5e7eb;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .team-member {
+            background: #080808;
+            border: 1px solid #1F2123;
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .team-member-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            background: linear-gradient(135deg, #7e22ce, #54d2d0);
+        }
+
+        .team-member h4 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .team-member p {
+            color: #9ca3af;
+        }
+
+        footer {
+            margin-top: auto;
+            background: #080808;
+            padding: 3rem 5%;
+            border-top: 1px solid #1F2123;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-around;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #7e22ce;
+        }
+
+        .footer-section a {
+            display: block;
+            color: #c7c6c6;
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: #fff;
+        }
+
+        @media (max-width: 1024px) {
+            .about-content,
+            .mission-vision {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                position: fixed;
+                right: 0;
+                top: 0;
+                height: 100vh;
+                width: 0;
+                flex-direction: column;
+                background: #040404;
+                padding: 5rem 0;
+                overflow: hidden;
+                transition: width 0.3s;
+            }
+
+            nav.active {
+                width: 250px;
+                padding: 5rem 2rem;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .hero-section h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+
+            .about-text h2 {
+                font-size: 2rem;
+            }
+
+            .team-section h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">
+            <img src="./assets/logo/logo.png" alt="Grubify Logo">
+        </a>
+        <nav id="nav">
+            <a href="about.html">About Us</a>
+            <a href="menu.html">Menu</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="login.php">Profile</a>
+        </nav>
+        <button class="menu-toggle" onclick="toggleMenu()">
+            <i class="bi bi-list"></i>
+        </button>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <h1>About Grubify</h1>
+            <p>Revolutionizing the way you order food with seamless technology and exceptional service</p>
+        </section>
+
+        <section class="about-content">
+            <div class="about-image">
+                <img src="./assets/images/Main/dash.png" alt="About Grubify">
+            </div>
+            <div class="about-text">
+                <h2>Who We Are</h2>
+                <p>Grubify is a cutting-edge digital food ordering platform designed to make your dining experience effortless and enjoyable. We bridge the gap between hungry customers and delicious food with our user-friendly interface and efficient service.</p>
+                <p>Founded with a vision to transform canteen and food ordering systems, we leverage modern technology to provide a seamless ordering experience. Whether you're at school, university, or the workplace, Grubify makes ordering your favorite meals quick and convenient.</p>
+                <p>Our platform integrates multiple payment gateways, real-time order tracking, and a comprehensive menu system to ensure you get exactly what you want, when you want it.</p>
+            </div>
+        </section>
+
+        <section class="mission-vision">
+            <div class="card">
+                <h3><i class="bi bi-bullseye"></i> Our Mission</h3>
+                <p>To provide a reliable, efficient, and user-friendly digital food ordering platform that enhances the dining experience for everyone. We strive to eliminate long queues and waiting times while ensuring food quality and customer satisfaction.</p>
+            </div>
+            <div class="card">
+                <h3><i class="bi bi-eye"></i> Our Vision</h3>
+                <p>To become the leading digital food ordering solution in educational institutions and corporate environments, setting new standards for convenience, efficiency, and customer service in the food service industry.</p>
+            </div>
+        </section>
+
+        <section class="team-section">
+            <h2>Our Team</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="team-member-img"></div>
+                    <h4>Team Member 1</h4>
+                    <p>Founder & CEO</p>
+                </div>
+                <div class="team-member">
+                    <div class="team-member-img"></div>
+                    <h4>Team Member 2</h4>
+                    <p>Head of Technology</p>
+                </div>
+                <div class="team-member">
+                    <div class="team-member-img"></div>
+                    <h4>Team Member 3</h4>
+                    <p>Operations Manager</p>
+                </div>
+                <div class="team-member">
+                    <div class="team-member-img"></div>
+                    <h4>Team Member 4</h4>
+                    <p>Customer Relations</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <img src="./assets/logo/logo.png" alt="logo" style="max-width: 120px; margin-bottom: 1rem;">
+                <p>RK University,<br>Lab 3,<br>City Campus, Rajkot</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="menu.html">Menu</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <a href="#"><i class="bi bi-facebook"></i> Facebook</a>
+                <a href="#"><i class="bi bi-twitter"></i> Twitter</a>
+                <a href="#"><i class="bi bi-instagram"></i> Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById('nav');
+            nav.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
